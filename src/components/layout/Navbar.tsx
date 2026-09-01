@@ -20,6 +20,7 @@ import {
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import Image from "next/image";
+import { ModeToggle } from "./ModeToggle";
 
 interface MenuItem {
   title: string;
@@ -56,7 +57,7 @@ const Navbar = ({
     url: "https://www.shadcnblocks.com",
     src: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/shadcnblockscom-icon.svg",
     alt: "logo",
-    title: "Shadcnblocks.com",
+    title: "Next Blog",
   },
   menu = [
     { title: "Home", url: "/" },
@@ -68,6 +69,10 @@ const Navbar = ({
     {
       title: "About",
       url: "/about",
+    },
+    {
+      title: "Dashboard",
+      url: "/dashboard",
     },
   ],
   auth = {
@@ -88,8 +93,8 @@ const Navbar = ({
                 src={logo.src}
                 className="max-h-8 dark:invert"
                 alt={logo.alt}
-                width={50}
-                height={50}
+                width={32}
+                height={32}
               />
               <span className="text-lg font-semibold tracking-tighter">
                 {logo.title}
@@ -104,6 +109,7 @@ const Navbar = ({
             </div>
           </div>
           <div className="flex gap-2">
+            <ModeToggle/>
             <Button variant="outline" size="sm">
               <Link href={auth.login.url}> {auth.login.title}</Link>
             </Button>
@@ -122,8 +128,8 @@ const Navbar = ({
                 src={logo.src}
                 className="max-h-8 dark:invert"
                 alt={logo.alt}
-                width={50}
-                height={50}
+                width={32}
+                height={32}
               />
             </a>
             <Sheet>
@@ -140,8 +146,8 @@ const Navbar = ({
                         src={logo.src}
                         className="max-h-8 dark:invert"
                         alt={logo.alt}
-                        width={50}
-                        height={50}
+                        width={32}
+                        height={32}
                       />
                     </a>
                   </SheetTitle>
