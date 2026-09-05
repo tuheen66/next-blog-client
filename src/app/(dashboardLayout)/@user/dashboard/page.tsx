@@ -1,9 +1,6 @@
-import React from "react";
+import { redirect } from "next/navigation";
+
 
 export default function userDashboard() {
-  return (
-    <div>
-      <h1>User dashboard</h1>
-    </div>
-  );
+  return redirect("/dashboard/history")
 }
